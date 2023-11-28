@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        #system {
+            background-color: #0077ff8c;
+            padding-bottom: 100px;
+            padding-top: 10px;
+            height: 100px;
+            width: 400px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div name="txtTitulo" id="txtTitulo"><h1>Qual seu país de origem?</h1></div>
+
+    <input type="text" name="txtreposta" id="txtreposta" placeholder="Qual seu país de origem">
+
+    <input type="button" value=" Verificar " onclick="verificar()">
+
+    <div name="txtreposta2" id="txtreposta2"></div>
+
+    <script>
+
+        function verificar(){
+            var txtPais = window.document.querySelector('input#txtreposta')
+            var res = window.document.querySelector('div#txtreposta2')
+            var pais = txtPais.value
+            var nacionalidade = 'Brasil'
+
+            res.innerHTML = `Seu país de origem é  <strong><p>${pais}</strong></p>`
+            if (pais == nacionalidade){
+                res.innerHTML += '<p><strong>Você é brasileiro</strong></p>'
+            }else{
+                res.innerHTML += '<p><strong>Você é Estrangeiro</strong></p>'
+            }
+        }
+    </script>
+    
+</body>
+</html>
